@@ -1,5 +1,6 @@
+//24006841 Najmi G2
 #include <iostream>
-#include <string>
+
 
 using namespace std;
 
