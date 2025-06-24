@@ -9,8 +9,6 @@ public:
     Node* prev;
     Node(string name) : name(name) , next(nullptr) {}
 
-    
-
 };
 
 class CircularLinkedList {
@@ -28,6 +26,9 @@ Node* tails = nullptr;
             newNode->next = head; 
             newNode->prev = tails; 
         } else {
+            head->prev = newNode;
+            newNode->next = head;
+            newNode->prev = tails;
             tails->next = newNode;
             tails = newNode;
             tails->next = head; 
@@ -35,15 +36,19 @@ Node* tails = nullptr;
     }
 
     void display() {
-        Node* current = head;
+        if (tails == nullptr) {
+            cout << "the list is empty" << endl;
+            return;
+        };
+        Node* current = tails;
+        do {
+            cout << current->name << "-> ";
+            current = current->prev;
+        } while (current != tails);
+        cout << current->name << endl; 
+    }
 
-       do {
-        cout << current->name << "-> ";
-        current = current->next;
-    } while (current != head);
-cout << current->name << endl;
 
-}
 };
 
 int main() {
@@ -54,6 +59,7 @@ CircularLinkedList cll;
 cll.addNode("Ali");
 cll.addNode("Bob"); 
 cll.addNode("Cade");
+cll.addNode("Dayah");
 
 cll.display();
 
