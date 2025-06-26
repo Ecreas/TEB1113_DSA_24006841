@@ -1,3 +1,4 @@
+//24006841 G2
 #include <iostream>
 
 using namespace std;
@@ -46,10 +47,10 @@ public:
             cout << "Stack underflow" << endl;
             return;
         }
-        //Node* temp = top;
+        Node* temp = top;
         top = top->next;
-        //cout << "Popped: " << temp->data << endl;
-        //delete temp; 
+        cout << "Popped: " << temp->data << endl;
+        delete temp; 
     }
 
 
