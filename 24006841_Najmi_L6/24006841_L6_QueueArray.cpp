@@ -13,7 +13,7 @@ public:
 
     void enqueue(string value) {
         if (count == 50) {
-            cout << "Queue full!" << endl;
+            cout << "Queue is full" << endl;
             return;
         }
         rear = (rear + 1);  
@@ -23,7 +23,7 @@ public:
 
     void dequeue() {
         if (count == 0) {
-            cout << "Queue empty!" << endl;
+            cout << "Queue is empty" << endl;
             return;
         }
         front = (front + 1);  
